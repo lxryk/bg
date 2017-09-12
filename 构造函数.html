@@ -1,0 +1,123 @@
+<!--  --><!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	/* 构造函数绑定 */
+		function iphone(name,color,width,height){
+			this.name=name;
+			this.color=color;
+			this.width=width;
+			this.height=height;
+		}
+		let iphone8=new iphone('iphone8','pink','5.8cm','6cm');
+		console.log(iphone8);
+
+      /*  属性  方法  */
+		/*function iphone(){
+			this.prand='iphone8';
+			this.size='20';
+			this.color='pink';
+			this.music=function(){
+				alert('ting');
+			}
+		}
+		let iphone8=new iphone();
+		console.log(iphone8);
+		console.log(iphone8.size);
+		alert(iphone.constructor);*/
+     // 访问一个没有的方法时，会报错！
+     // 访问一个没有的属性时，默认undefined!
+     //alert(iphone8.size);
+     //alert(iphone['size']);
+     //iphone8['music']();
+     // for in
+     // 遍历
+     /*for(let i in iphone8){
+     	console.log(`${i}---${iphone8[i]}`);
+     }*/
+        
+
+     let zhangsan = {};
+     zhangsan.name='zhangsan';
+     zhangsan.age='20';
+     zhangsan.say=function(){
+     	alert(zhangsan.age);
+     }
+     console.log(zhangsan);
+     alert(zhangsan.constructor);
+     //constructor 返回构造函数
+     
+     //什么   值
+     let zhangsan = {
+     	"age":20, "name":'zhangsan', "sex":'nan',
+     	say:function(){
+     		alert(1);
+     	}
+     }
+     console.log(zhangsan);
+     console.log(zhangsan.age);
+     zhangsan.say();
+
+
+     let iphone={
+         prand:'iphone8', size:6, color:'pink', money:2000,
+         music:function(){
+             alert('听音乐')
+         }
+     }
+     console.log(iphone);
+     iphone.music();
+
+     /* 类  */
+     //用类的时候 首字母一般大写
+     //方法一般写在constructor外面 方法后面不加逗号，‘ ; ’可以加可以不加
+     class Student{
+         constructor(name,age){
+         	this.name=name;
+         	this.age=age;
+         	this.study=function(){
+         		alert('学习');
+         	}
+         }
+         say(){
+         	alert(1);
+         }
+     }
+     let zhangsan=new Student('zhangsan',20);
+     console.log(zhangsan.name);
+     /*zhangsan.say();
+     zhangsan.study();*/
+
+
+     /* prototype  */
+     // 构造函数里面传参      方法里面传参（直接写在方法的后面） 
+     // 方法可以调用自己的属性  一个方法里面可以调用另一个方法
+     // 属性可以是数字
+     
+     var zhangsan=new Person('zhangsan',20,'nan');
+     console.log(zhangsan);
+     zhangsan.speech('演讲');
+
+     function Person(name,age,sex){
+          this.name=name;
+          this.age=age;
+          this.sex=sex;
+          this.speech='演讲';
+          this.say=function(value){
+          	alert(value);
+          }
+          this.study=function(value){
+          	alert(value);
+          }
+          this.speech=function(value){
+          	this.say(value);
+          }
+     }
+
+	</script>
+</body>
+</html>
